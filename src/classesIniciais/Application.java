@@ -1,12 +1,16 @@
 package classesIniciais;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
 import ClassesConstantes.StatusAluno;
+import excecao.ExcecaoProcessarNota;
 import interfacesIniciais.PermitirAcesso;
 
 public class Application {
@@ -15,6 +19,9 @@ public class Application {
 		
 		
 		try {
+			
+			lerArquivo();
+			
 			
 			String login = JOptionPane.showInputDialog("Informe o Login");
 			String senha = JOptionPane.showInputDialog("Informe a Senha");
@@ -27,7 +34,7 @@ public class Application {
 			//autenticacao.autenticarCursoJava(permitirAcesso)
 			
 			if(new FuncaoAutenticacao(permitirAcesso).autenticarCursoJava()) {
-				List<Aluno> alunos = null;
+				List<Aluno> alunos = new ArrayList<>();
 				
 				HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
 				
@@ -142,6 +149,15 @@ public class Application {
 			}
 			JOptionPane.showMessageDialog(null, "Erro a processar notas!" + saida.toString());
 			
+		}
+	}
+	public static void lerArquivo() throws ExcecaoProcessarNota {
+		try {
+			File file = new File("c://lines.txt");
+			Scanner scanner = new Scanner(file);
+			
+		}catch(FileNotFoundException e) {
+			throw new ExcecaoProcessarNota(e.getMessage());
 		}
 	}
 
