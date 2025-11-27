@@ -1,4 +1,4 @@
-package classesIniciais;
+package classesExecutaveis;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,6 +10,10 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 import ClassesConstantes.StatusAluno;
+import classesIniciais.Aluno;
+import classesIniciais.Disciplina;
+import classesIniciais.FuncaoAutenticacao;
+import classesIniciais.Secretario;
 import excecao.ExcecaoProcessarNota;
 import interfacesIniciais.PermitirAcesso;
 
@@ -52,11 +56,11 @@ public class Application {
 					
 					for(int pos = 1; pos <= 2; pos++) {
 						String nomeDisciplina = JOptionPane.showInputDialog("Nome da "+ pos+ "ª Disciplina" );
-						String notaDisciplina = JOptionPane.showInputDialog("Nota da "+ pos+ "ª Disciplina");
+						//String notaDisciplina = JOptionPane.showInputDialog("Nota da "+ pos+ "ª Disciplina");
 						
 						Disciplina disciplina = new Disciplina();
 						disciplina.setNome(nomeDisciplina);
-						disciplina.setNota(Double.parseDouble(notaDisciplina));
+						//disciplina.setNota(Double.parseDouble(notaDisciplina));
 						
 						aluno.getDisciplinas().add(disciplina);
 					}
@@ -151,11 +155,12 @@ public class Application {
 			
 		}
 	}
+	
 	public static void lerArquivo() throws ExcecaoProcessarNota {
 		try {
 			File file = new File("c://lines.txt");
 			Scanner scanner = new Scanner(file);
-			
+			scanner.close();
 		}catch(FileNotFoundException e) {
 			throw new ExcecaoProcessarNota(e.getMessage());
 		}

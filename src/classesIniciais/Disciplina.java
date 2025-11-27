@@ -1,10 +1,11 @@
 package classesIniciais;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Disciplina {
 	private String nome;
-	private double nota;
+	private double[] notas = new double[4];
 	
 	public Disciplina() {
 	}
@@ -17,17 +18,33 @@ public class Disciplina {
 		this.nome = nome;
 	}
 
-	public double getNota() {
-		return nota;
+	public double[] getNotas() {
+		return notas;
 	}
 
-	public void setNota(double nota) {
-		this.nota = nota;
+	public void setNotas(double[] notas) {
+		this.notas = notas;
 	}
+	
+	public double getMediaNotas() {
+		double somaNotas = 0.0;
+		
+		for(double nota : notas) {
+			somaNotas += nota;
+		}
+		
+		return somaNotas / notas.length;
+	}
+
+	
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(nome, nota);
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(notas);
+		result = prime * result + Objects.hash(nome);
+		return result;
 	}
 
 	@Override
@@ -39,13 +56,15 @@ public class Disciplina {
 		if (getClass() != obj.getClass())
 			return false;
 		Disciplina other = (Disciplina) obj;
-		return Objects.equals(nome, other.nome) && Double.doubleToLongBits(nota) == Double.doubleToLongBits(other.nota);
+		return Objects.equals(nome, other.nome) && Arrays.equals(notas, other.notas);
 	}
 
 	@Override
 	public String toString() {
-		return "Disciplina [nome=" + nome + ", nota=" + nota + "]";
+		return "Disciplina [nome=" + nome + ", notas=" + Arrays.toString(notas) + "]";
 	}
+
+	
 	
 
 }
