@@ -31,19 +31,47 @@ public class TelaTimeThread extends JDialog {
 	
 	private Runnable thread1 = new Runnable() {
 		public void run() {
-			while(true) {
-				mostraTempo.setText(new SimpleDateFormat("dd/MM/yyyy hh:mm.ss").
-						format(Calendar.getInstance().getTime()));
+			while(!Thread.currentThread().isInterrupted()) {
 				try {
+					String hora = new SimpleDateFormat("dd/MM/yyyy HH:mm.ss")
+							.format(Calendar.getInstance().getTime());
+					
+					  javax.swing.SwingUtilities.invokeLater(() -> {
+		                    mostraTempo.setText(hora);
+		                });
+					
 					Thread.sleep(1000);
+					
 				} catch (InterruptedException e) {
-					e.printStackTrace();
+					//e.printStackTrace();
+					break;
+				}
+			}
+		}
+	};
+	private Runnable thread2 = new Runnable() {
+		public void run() {
+			while(!Thread.currentThread().isInterrupted()) {
+				try {
+					String hora = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+							.format(Calendar.getInstance().getTime());
+					
+					  javax.swing.SwingUtilities.invokeLater(() -> {
+		                    mostraTempo2.setText(hora);
+		                });
+					
+					Thread.sleep(1000);
+					
+				} catch (InterruptedException e) {
+					//e.printStackTrace();
+					break;
 				}
 			}
 		}
 	};
 	
 	private Thread thread1Time;
+	private Thread thread2Time;
 	
 	public TelaTimeThread() { // Executa o que tiver dentro no momento da abertura ou execução
 		setTitle("Minha tela de time com Thread");
@@ -91,16 +119,24 @@ public class TelaTimeThread extends JDialog {
 			public void actionPerformed(ActionEvent e) { //Executa o clique no botão
 				thread1Time = new Thread(thread1);
 				thread1Time.start();
+				thread2Time = new Thread(thread2);
+				thread2Time.start();
+				jButton.setEnabled(false);
+				jButton2.setEnabled(true);
 			}
 		});
 		
 		jButton2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				thread1Time.stop();
+				thread1Time.interrupt();
+				thread2Time.interrupt();
+				jButton.setEnabled(true);
+				jButton2.setEnabled(false);
 			}
 		} );
 		
+		jButton2.setEnabled(false);
 		
 		add(jPanel, BorderLayout.WEST);
 			
