@@ -31,12 +31,19 @@ public class ClasseCalendar {
 		
 		long quant = ChronoUnit.DAYS.between(LocalDate.parse("2025-01-01"), LocalDate.now());
 		
+		long quant1 = ChronoUnit.MONTHS.between(LocalDate.parse("2025-01-01"), LocalDate.now()); 
+		
 		long quant2 = ChronoUnit.HOURS.between(LocalDateTime.parse("2025-12-09T11:40:00"), LocalDateTime.now());
+		
+		long quant3 = ChronoUnit.YEARS.between(LocalDateTime.parse("2023-12-09T11:40:00"), LocalDateTime.parse("2025-12-09T11:40:00"));
 		
 		System.out.println("Possui " + quant + " dias entre a faixa de data");
 		
 		System.out.println("Possui " + quant2 + " horas entre a faixa de data");
 		
+		System.out.println("Possui " + quant1 + " meses entre a faixa de data");
+		
+		System.out.println("Possui " + quant3 + " anos entre a faixa de data");
 	}
 
 }
