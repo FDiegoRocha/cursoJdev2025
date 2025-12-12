@@ -14,9 +14,9 @@ public class ClasseCalendar {
 		
 		// Simular data que vem do banco de dados
 		
-		calendar.setTime(new SimpleDateFormat("dd-MM-yyyy").parse("10-03-2021"));
+		//calendar.setTime(new SimpleDateFormat("dd-MM-yyyy").parse("10-03-2021"));
 		
-		calendar.add(Calendar.DAY_OF_MONTH, 5);
+		/*calendar.add(Calendar.DAY_OF_MONTH, 5);
 		
 		System.out.println("Somando dia do mês: " + new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
 		
@@ -35,7 +35,13 @@ public class ClasseCalendar {
 		
 		System.out.println("Possui " + quant + " dias entre a faixa de data");
 		
-		System.out.println("Possui " + quant2 + " horas entre a faixa de data");
+		System.out.println("Possui " + quant2 + " horas entre a faixa de data");*/
+		
+		System.out.println("Data contrato inicial: " + new SimpleDateFormat("dd/MM/yyyy").format(calendar.getTime()));
+		for(int parcela = 1; parcela <= 12; parcela ++) {
+			calendar.add(Calendar.DAY_OF_MONTH, 30);
+			System.out.println("Parcela " + parcela + "º = " + new SimpleDateFormat("dd/MM/yyyy").format(calendar.getTime()));
+		}
 		
 	}
 
