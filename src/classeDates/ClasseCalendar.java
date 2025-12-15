@@ -26,7 +26,7 @@ public class ClasseCalendar {
 
 		calendar.add(Calendar.YEAR, 1);
 		
-		System.out.println("Somando 1 ano: " + new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));
+		System.out.println("Somando 1 ano: " + new SimpleDateFormat("dd-MM-yyyy").format(calendar.getTime()));*/
 
 		
 		long quant = ChronoUnit.DAYS.between(LocalDate.parse("2025-01-01"), LocalDate.now());
@@ -39,7 +39,11 @@ public class ClasseCalendar {
 		
 		System.out.println("Possui " + quant + " dias entre a faixa de data");
 		
-		System.out.println("Possui " + quant2 + " horas entre a faixa de data");*/
+		System.out.println("Possui " + quant2 + " horas entre a faixa de data");
+		
+		System.out.println("Possui " + quant1 + " meses entre a faixa de data");
+		
+		System.out.println("Possui " + quant3 + " anos entre a faixa de data");
 		
 		System.out.println("Data contrato inicial: " + new SimpleDateFormat("dd/MM/yyyy").format(calendar.getTime()));
 		for(int parcela = 1; parcela <= 12; parcela ++) {
@@ -47,9 +51,6 @@ public class ClasseCalendar {
 			System.out.println("Parcela " + parcela + "º = " + new SimpleDateFormat("dd/MM/yyyy").format(calendar.getTime()));
 		}
 		
-		System.out.println("Possui " + quant1 + " meses entre a faixa de data");
-		
-		System.out.println("Possui " + quant3 + " anos entre a faixa de data");
 	}
 
 }

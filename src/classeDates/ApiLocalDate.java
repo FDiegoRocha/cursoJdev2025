@@ -30,7 +30,7 @@ public class ApiLocalDate {
 		System.out.println("Dia da Semana: " + date.getDayOfWeek());
 		System.out.println("Dia da Semana: " + date.getDayOfWeek().getValue());
 
-
+		
 
 	}
 
