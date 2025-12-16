@@ -11,7 +11,7 @@ public class DateJava {
 		
 		Calendar calendar = Calendar.getInstance();
 		Date date = new Date();
-		
+		/*
 		System.out.println("Data em milisegundos: " + date.getTime());
 		System.out.println("Calendar Data em milisegundos: " + calendar.getTimeInMillis());
 		System.out.println("Dia do mês: " + date.getDate());
@@ -25,7 +25,7 @@ public class DateJava {
 		System.out.println("Secundos: " + date.getSeconds());
 		System.out.println("Calendar Secundos: " + calendar.get(Calendar.SECOND));
 		System.out.println("Ano: " + (date.getYear() + 1900));
-		System.out.println("Calendar Ano: " + calendar.get(Calendar.YEAR) );
+		System.out.println("Calendar Ano: " + calendar.get(Calendar.YEAR) );*/
 
 		// ---------------- Simple Date Format -----------------------
 		
