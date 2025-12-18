@@ -20,7 +20,7 @@ public class ArquivoEscrita {
 		pessoas.add(pessoa3);
 		
 		// Objeto do tipo File
-		File arquivo = new File("C:\\cursoJdev2025\\src\\aulasArquivoLeituraEscrita\\arquivo.txt");
+		File arquivo = new File("C:\\cursoJdev2025\\src\\aulasArquivoLeituraEscrita\\arquivo.csv");
 		
 		// Se não existir cria o arquivo no caminho informado acima
 		if(!arquivo.exists()) {
