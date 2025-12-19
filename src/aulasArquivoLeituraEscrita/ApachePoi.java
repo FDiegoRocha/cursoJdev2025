@@ -43,13 +43,13 @@ public class ApachePoi {
 			
 			int celula = 0;
 			
-			Cell celNome = linha.createCell(celula ++); // célula 1
+			Cell celNome = linha.createCell(celula ++); // célula 0
 			celNome.setCellValue(p.getNome());
 			
-			Cell celEmail = linha.createCell(celula ++);// célula 2
+			Cell celEmail = linha.createCell(celula ++);// célula 1
 			celEmail.setCellValue(p.getEmail());
 			
-			Cell celIdade = linha.createCell(celula ++);// célula 3
+			Cell celIdade = linha.createCell(celula ++);// célula 2
 			celIdade.setCellValue(p.getIdade());
 		}
 		
