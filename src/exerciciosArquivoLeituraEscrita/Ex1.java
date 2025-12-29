@@ -17,12 +17,16 @@ public class Ex1 {
 		
 		File arq = new File("C:\\cursoJdev2025\\src\\exerciciosArquivoLeituraEscrita\\PlanilhaAlunos.xlsx");
 		
+		// Classe para arquivos xlsx - excel novo
 		XSSFWorkbook xssfworkbook = new XSSFWorkbook();
 		
+		// Classe para abas do arquivo
 		XSSFSheet sheet = xssfworkbook.createSheet("Alunos");
 		
+		// primeira linha da planilha
 		Row row = sheet.createRow(0);
 		
+		// celulas da primeira linha
 		Cell cell = row.createCell(0);
 		cell.setCellValue("Nome");
 		Cell cell1 = row.createCell(1);

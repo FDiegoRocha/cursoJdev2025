@@ -1,6 +1,7 @@
 package aulasArquivoLeituraEscrita;
 
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,6 +30,9 @@ public class ArquivoEscrita {
 		
 		// instancia um objeto para escrever no arquivo
 		FileWriter escreverArquivo = new FileWriter(arquivo);
+		
+		// FORMA DE LER ARQUIVO
+		//FileReader reader = new FileReader("");
 		
 		for(Pessoa p : pessoas) {
 			escreverArquivo.write(p.getNome() + ";" + p.getEmail() + ";" + p.getIdade() + "\n");

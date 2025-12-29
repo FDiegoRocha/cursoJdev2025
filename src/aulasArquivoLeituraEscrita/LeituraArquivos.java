@@ -11,9 +11,14 @@ public class LeituraArquivos {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		FileInputStream arquivo = new FileInputStream(new File("C:\\cursoJdev2025\\src\\aulasArquivoLeituraEscrita\\arquivo.csv"));
 		
-		Scanner leituraArquivo = new Scanner(arquivo, "UTF-8");
+		// FORMAS DE LEITURA DE ARQUIVO
+		
+		//1ª FORMA
+		//FileInputStream arquivo = new FileInputStream(new File("C:\\cursoJdev2025\\src\\aulasArquivoLeituraEscrita\\arquivo.csv"));
+		
+		//2ª FORMA
+		Scanner leituraArquivo = new Scanner(new File("C:\\cursoJdev2025\\src\\aulasArquivoLeituraEscrita\\arquivo.csv"), "UTF-8");
 		
 		List<Pessoa> pessoas = new ArrayList<>();
 		
