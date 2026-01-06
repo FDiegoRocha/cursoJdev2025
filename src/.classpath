@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="lib/commons-collections4-4.5.0.jar"/>
 	<classpathentry kind="lib" path="lib/commons-compress-1.28.0.jar"/>
 	<classpathentry kind="lib" path="lib/poi-ooxml-full-5.5.1.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.13.2.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>
